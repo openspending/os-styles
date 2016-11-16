@@ -1,0 +1,14 @@
+// Import Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Import OpenSpening styles
+@import "osbs/os";
+
+// Import holding page styles
+@import "next";
+
+// Import style-guide
+@import "style-guide";
