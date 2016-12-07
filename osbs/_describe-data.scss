@@ -53,7 +53,6 @@
         background-color: $dark-grey;
         font-size: 14px;
         padding: 10px 10px 0 10px;
-        min-height: 90px;
 
         &:not(.empty):hover + .field-info {
           bottom: -120px;
@@ -98,14 +97,13 @@
         }
 
         &.empty {
-          display: table;
           width: 100%;
           text-align: center;
 
           span {
-            display: table-cell;
-            vertical-align: middle;
             color: rgba(#fff,0.5);
+            display: block;
+            padding-top: 30px;
           }
         }
       }
