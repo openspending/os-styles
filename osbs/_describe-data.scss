@@ -1,0 +1,203 @@
+.describe-columns {
+  @include clearfix;
+  margin: 10px;
+
+  & > div {
+    @include make-sm-column(6);
+    @include make-md-column(4);
+    @include make-lg-column(3);
+    @media (min-width: 2436px) {
+      width: 400px;
+    }
+    padding: 10px;
+
+    & > div {
+      height: 320px;
+      background-color: $dark-grey;
+      overflow: hidden;
+      position: relative;
+      @include box-shadow(0px 0px 0px 2px rgba($grey,0.1));
+
+      header {
+        @include dark-module;
+        padding: $padding-large-vertical $grid-gutter-width/2;
+
+        .toggle {
+          float: right;
+          @include switch;
+          margin-top: 3px;
+          margin-right: -1px;
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 17px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .description {
+          display: block;
+          font-size: 14px;
+          color: inherit;
+          opacity: 0.8;
+
+          &.add {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .preview {
+        background-color: $dark-grey;
+        font-size: 14px;
+        padding: 10px 10px 0 10px;
+        min-height: 90px;
+
+        &:not(.empty):hover + .field-info {
+          bottom: -120px;
+        }
+
+        ol {
+          display: table;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          counter-reset: section;
+          border: solid 1px darken($light-grey,3%);
+          border-radius: $border-radius-base;
+          background-color: rgba(#fff,0.9);
+        }
+
+        li {
+          display: table-row;
+
+          &:before {
+            display: table-cell;
+            counter-increment: section;
+            content: counter(section);
+            width: 30px;
+            text-align: center;
+            border-bottom: solid 1px darken($light-grey,3%);
+            border-right: solid 1px darken($light-grey,3%);
+            color: rgba($grey,0.7);
+          }
+          span {
+            display: table-cell;
+            border-bottom: solid 1px darken($light-grey,3%);
+            padding: 3px 8px 1px 8px;
+            color: rgba($grey,0.7);
+          }
+
+          &:first-child {
+            span {
+              padding-top: 6px;
+            }
+          }
+        }
+
+        &.empty {
+          display: table;
+          width: 100%;
+          text-align: center;
+
+          span {
+            display: table-cell;
+            vertical-align: middle;
+            color: rgba(#fff,0.5);
+          }
+        }
+      }
+
+      .field-info {
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        @include transition(bottom, 0.5s, ease-out);
+
+        label {
+          display: block;
+          font-size: 12px;
+          opacity: 0.5;
+          margin-top: $grid-gutter-width/2;
+          margin-bottom: 0;
+          padding-left: 5px;
+          padding-right: 5px;
+
+          &:first-child {
+            margin-top: 5px;
+          }
+        }
+
+        input {
+          @include minimal-field;
+        }
+
+        textarea {
+          @include minimal-textarea;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          height: 15px;
+          @include gradient-vertical(transparent, rgba($dark-grey,0.1), 0%, 100%);
+          position: absolute;
+          width: 100%;
+          top: -15px;
+          left: 0;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      & > div {
+        @include box-shadow(none);
+      }
+    }
+
+    &.add {
+      & > div {
+        display: table;
+        border: dashed 2px $light-grey;
+        text-align: center;
+        width: 100%;
+        background-color: transparent;
+        @include box-shadow(none);
+
+        &:hover {
+          border-color: $primary-colour;
+        }
+
+        & > a {
+          display: table-cell;
+          vertical-align: middle;
+          color: darken($light-grey, 10%);
+          text-decoration: none;
+
+          svg {
+            width: 100%;
+            height: 30px;
+            fill: currentColor;
+          }
+
+          &:hover {
+            color: $primary-colour;
+          }
+        }
+      }
+    }
+
+    &.complete {
+      & > div {
+        //@include box-shadow(0px 0px 0px 2px $primary-colour);
+      }
+    }
+  }
+}

@@ -128,5 +128,70 @@
       margin-bottom: 0.3em;
     }
   }
+}
 
+.steps {
+  padding: 0;
+  margin: 0;
+  display: block;
+  padding-left: 32px;
+
+  li {
+    display: inline-block;
+    min-width: 40px;
+    position: relative;
+    text-align: left;
+
+    a {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 26px;
+      color: $primary-colour;
+      border: solid 2px $primary-colour;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: -32px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      top: 13px;
+      left: -4px;
+      right: 26px;
+      background-color: $primary-colour;
+    }
+
+    &:last-child {
+      width: auto;
+      &:before {
+        display: none;
+      }
+    }
+
+    &.current {
+      &:before {
+        background-color: lighten($grey,40%);
+      }
+      a {
+        color: $grey;
+        border-color: $grey;
+      }
+
+      & ~ li:not(.passed) {
+        &:before {
+          background-color: lighten($grey,40%);
+        }
+        a {
+          color: lighten($grey,40%);
+          border-color: lighten($grey,40%);
+        }
+      }
+    }
+  }
 }

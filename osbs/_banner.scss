@@ -1,7 +1,6 @@
 .banner {
-  background-color: $dark-grey;
-  color: #fff;
-  padding: $base-spacing*2 $base-spacing;
+  @include dark-module($dark-grey);
+  padding: $base-spacing*1.5 $base-spacing;
   position: relative;
 
   h1, h2 {
@@ -21,6 +20,29 @@
 
     &:hover {
       @include button-variant($grey, #fff, #fff);
+    }
+  }
+
+  .steps {
+    li {
+      &.current {
+        &:before {
+          background-color: lighten($grey,10%);
+        }
+        a {
+          color: #fff;
+          border-color: #fff;
+        }
+        & ~ li:not(.passed) {
+          &:before {
+            background-color: lighten($grey,10%);
+          }
+          a {
+            color: lighten($grey,10%);
+            border-color: lighten($grey,10%);
+          }
+        }
+      }
     }
   }
 }

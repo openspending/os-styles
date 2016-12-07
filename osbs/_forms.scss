@@ -211,3 +211,34 @@ label {
   	}
   }
 }
+
+@mixin minimal-field {
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 1px 0;
+  padding: 0 5px;
+  font-size: 15px;
+
+  &:focus {
+    border-color: $primary-colour;
+  }
+}
+@mixin minimal-textarea {
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 1px 0;
+  height: 26px;
+  resize: none;
+  overflow: hidden;
+  border-color: $light-grey;
+  @include transition(height, 0.5s, ease-out);
+  padding: 0 5px;
+  font-size: 15px;
+
+  &:focus {
+    border-color: $primary-colour;
+    height: 120px;
+    overflow: auto;
+    padding: 5px;
+  }
+}

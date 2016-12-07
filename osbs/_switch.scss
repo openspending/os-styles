@@ -1,0 +1,72 @@
+@mixin switch {
+  position: relative; width: 36px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid rgba($light-grey,0.2);
+    border-radius: 0px;
+    padding: 0;
+    margin: 0;
+
+    .inner {
+      display: block;
+      width: 200%;
+      margin-left: -100%;
+      @include transition( margin 0.3s ease-in 0s);
+
+      &:before,
+      &:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 14px;
+        padding: 0;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+
+      &:before {
+        content: "";
+        padding-left: 10px;
+      }
+
+      &:after {
+        content: "";
+        padding-right: 10px;
+        text-align: right;
+      }
+    }
+
+    .switch {
+      display: block;
+      width: 18px;
+      margin: 0px;
+      background: lighten($grey,20%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 18px;
+      @include transition(all 0.3s ease-in 0s);
+    }
+  }
+
+  input:checked {
+    & + .label .inner {
+      margin-left: 0;
+    }
+    & + .label .switch {
+      right: 0px;
+      background-color: $primary-colour;
+    }
+  }
+}
