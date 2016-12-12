@@ -4,4 +4,14 @@
   a {
     color: inherit;
   }
+
+  &[class*=tour-] {
+    .popover-navigation {
+      & > .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
 }
