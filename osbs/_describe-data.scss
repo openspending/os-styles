@@ -24,8 +24,16 @@
         .toggle {
           float: right;
           @include switch;
-          margin-top: 3px;
-          margin-right: -1px;
+          margin-top: 2px;
+          margin-right: -2px;
+        }
+
+        .close {
+          color: #fff;
+          text-shadow: none;
+          opacity: 1;
+          font-size: 30px;
+          line-height: 0.9;
         }
 
         h3 {
