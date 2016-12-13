@@ -17,8 +17,11 @@
         @include clearfix;
 
         .btn {
-          width: 50%;
+          width: 100%;
           @include button-variant(#fff, $primary-colour, $grey);
+          @media (min-width: $screen-sm-min) {
+            width: 50%;
+          }
         }
       }
 
