@@ -121,6 +121,29 @@
         }
       }
 
+      .constant {
+        textarea {
+          width: 100%;
+          padding: 36px 10px 0 10px;
+          text-align: center;
+          background-color: rgba($dark-grey, 0.75);
+          outline: 0;
+          border: none;
+          resize: none;
+          color: #fff;
+          height: 100px;
+          @include transition(background-color, 0.5s, ease-out);
+
+          &:hover {
+            background-color: rgba($dark-grey, 0.8);
+          }
+
+          &:focus {
+            background-color: $dark-grey;
+          }
+        }
+      }
+
       .field-info {
         padding: 10px;
         position: absolute;
