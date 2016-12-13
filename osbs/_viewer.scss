@@ -1,0 +1,18 @@
+body.viewer {
+
+  a.add.visulisation {
+    display: block;
+    text-align: center;
+    border: dashed 2px $light-grey;
+    border-radius: $border-radius-base;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    
+    span {
+      display: block;
+    }
+  }
+}
