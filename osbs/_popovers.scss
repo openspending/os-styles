@@ -6,11 +6,41 @@
   }
 
   &[class*=tour-] {
+    .btn {
+      outline: none;
+    }
     .popover-navigation {
+
+      .btn-group {
+        margin: 0 13px 13px 13px;
+        display: block;
+        @include clearfix;
+
+        .btn {
+          width: 50%;
+          @include button-variant(#fff, $primary-colour, $grey);
+        }
+      }
+
       & > .btn {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 5px;
+        right: 5px;
+        color: $dark-grey;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        padding: 6px;
+        line-height: 20px;
+        border: none;
+
+        &:before {
+          content: '×';
+          color: #fff;
+          display: block;
+          font-weight: bold;
+          font-size: 30px;
+        }
       }
     }
   }
