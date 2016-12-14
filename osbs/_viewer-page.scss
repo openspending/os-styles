@@ -1,0 +1,45 @@
+body.viewer {
+
+  a.add.visulisation {
+    @include add-box();
+    border-radius: $border-radius-base;
+    margin-bottom: $grid-gutter-width;
+    font-size: 14px;
+
+    span {
+      display: block;
+    }
+  }
+
+  .table-view {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: lighten($lighter-grey, 2);
+    border: solid 1px $light-grey;
+    border-radius: $border-radius-base;
+
+    table {
+      thead {
+        background-color: #fff;
+      }
+
+      th {
+        padding: $grid-gutter-width/2;
+        font-size: 14px;
+      }
+
+      td {
+        padding: $padding-base-vertical $grid-gutter-width/2;
+        border-top: solid 1px $light-grey;
+        font-size: 13px;
+      }
+
+      tr:hover {
+        td {
+          background-color: rgba($primary-colour,0.1);
+        }
+      }
+    }
+  }
+}

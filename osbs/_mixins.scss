@@ -155,3 +155,23 @@
     }
   }
 }
+
+@mixin add-box {
+  display: block;
+  border: dashed 2px $light-grey;
+  text-align: center;
+  text-decoration: none;
+  color: darken($light-grey, 20%);
+  padding: $grid-gutter-width;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: $primary-colour;
+    border-color: $primary-colour;
+  }
+}
