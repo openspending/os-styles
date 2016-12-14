@@ -156,13 +156,15 @@
   }
 }
 
-@mixin add-box {
+@mixin add-box($bgc: lighten($lighter-grey, 2)) {
   display: block;
   border: dashed 2px $light-grey;
   text-align: center;
   text-decoration: none;
   color: darken($light-grey, 20%);
   padding: $grid-gutter-width;
+  background-color: $bgc;
+  cursor: pointer;
 
   svg {
     width: 30px;
