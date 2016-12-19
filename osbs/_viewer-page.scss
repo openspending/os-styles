@@ -1,10 +1,41 @@
 body.viewer {
 
-  h2 {
+  .share-page {
+    float: right;
+    width: 26px;
+    color: $grey;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+
+      & + span {
+        @include text-hide;
+      }
+    }
+  }
+
+  .package-title {
     border-bottom: solid 1px $light-grey;
     font-size: 22px;
     margin-top: 0;
     margin-bottom: $grid-gutter-width;
+    padding-bottom: $padding-base-vertical;
+
+    svg {
+      fill: currentColor;
+      width: 26px;
+      height: 26px;
+      float: left;
+      position: relative;
+      top: -1px;
+
+      & + span {
+        display: block;
+        margin-left: 32px;
+      }
+    }
   }
 
   .description {
