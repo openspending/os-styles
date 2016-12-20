@@ -170,6 +170,13 @@
     width: 30px;
     height: 30px;
     fill: currentColor;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    & + span {
+      margin-top: 3px;
+    }
   }
 
   &:hover {

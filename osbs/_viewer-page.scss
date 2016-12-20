@@ -47,7 +47,7 @@ body.viewer {
     }
   }
 
-  a.add.visulisation {
+  a.add.visualisation {
     @include add-box();
     border-radius: $border-radius-base;
     margin-bottom: $grid-gutter-width;
@@ -55,6 +55,159 @@ body.viewer {
 
     span {
       display: block;
+    }
+  }
+
+  .chart {
+    margin-bottom: $grid-gutter-width;
+
+    & > article {
+      background-color: #fff;
+      border: solid 1px $light-grey;
+      border-radius: $border-radius-base;
+
+      .chart-header {
+        padding: $grid-gutter-width/2;
+        border-bottom: solid 1px $light-grey;
+
+        .tools {
+          float: right;
+          position: relative;
+          top: -4px;
+
+          li {
+            display: inline-block;
+            position: relative;
+
+            a {
+              color: $light-grey;
+              text-decoration: none;
+
+              &:hover {
+                color: $primary-colour;
+              }
+            }
+
+            svg {
+              width: 30px;
+              height: 30px;
+              fill: currentColor;
+
+              & + span {
+                @include text-hide;
+              }
+            }
+
+            & > span {
+              @include context-menu (left);
+              width: 230px;
+              padding: 10px;
+
+              &.active {
+                & ~ a {
+                  color: $grey;
+                }
+              }
+            }
+
+            &.remove {
+              & > span {
+                button {
+                  display: block;
+                  width: 100%;
+
+                  & + button {
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .breadcrumb {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .chart-body {
+
+        .chart-main,
+        .chart-info {
+          & > div {
+            padding: $grid-gutter-width/2;
+          }
+        }
+
+        .chart-main {
+          & > div {
+            padding-bottom: $grid-gutter-width/4;
+          }
+        }
+        .chart-info {
+          & > div {
+            padding-top: $grid-gutter-width/4;
+
+            .chart-title {
+              font-size: 17px;
+              margin-bottom: 0.1em;
+            }
+
+            p {
+              font-size: 13px;
+            }
+
+            :last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        @media (min-width: $screen-lg-min) {
+          display: table;
+          width: 100%;
+
+          .chart-main,
+          .chart-info {
+            display: table-cell;
+          }
+
+          .chart-main {
+            width: 70%;
+
+            & > div {
+              padding: 2px $grid-gutter-width/4 $grid-gutter-width/2 $grid-gutter-width/2;
+            }
+          }
+          .chart-info {
+            vertical-align: bottom;
+
+            & > div {
+              padding: $grid-gutter-width/2 $grid-gutter-width/2 $grid-gutter-width/2 $grid-gutter-width/4;
+            }
+          }
+        }
+      }
+    }
+
+
+    & + a.add.visualisation,
+    a.add.visualisation {
+      padding-top: $grid-gutter-width*0.25;
+      padding-bottom: $grid-gutter-width*0.25;
+      background-color: transparent;
+      @include transition(padding, 0.3s);
+      @include transition-delay(0.2s);
+
+      .verbose {
+        @include text-hide;
+      }
+
+      &:hover {
+        padding-top: $grid-gutter-width*0.5;
+        padding-bottom: $grid-gutter-width*0.5;
+      }
     }
   }
 
