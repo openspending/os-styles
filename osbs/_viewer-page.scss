@@ -1,4 +1,11 @@
 body.viewer {
+  .sidebar {
+    display: none;
+
+    @media (min-width: $screen-sm-min) {
+      display: block;
+    }
+  }
 
   .share-page {
     float: right;
@@ -48,18 +55,27 @@ body.viewer {
   }
 
   a.add.visualisation {
-    @include add-box();
-    border-radius: $border-radius-base;
-    margin-bottom: $grid-gutter-width;
-    font-size: 14px;
+    display: none;
 
-    span {
-      display: block;
+    @media (min-width: $screen-sm-min) {
+      @include add-box();
+      border-radius: $border-radius-base;
+      margin-bottom: $grid-gutter-width;
+      font-size: 14px;
+
+      span {
+        display: block;
+      }
     }
   }
 
   .chart {
     margin-bottom: $grid-gutter-width;
+    display: none;
+
+    @media (min-width: $screen-sm-min) {
+      display: block;
+    }
 
     & > article {
       background-color: #fff;
