@@ -1,3 +1,29 @@
+.share.context {
+  & > span {
+    min-width: 230px;
+
+    .share-heading {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+
+    .form {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      label {
+        font-size: 0.9em;
+        margin-top: 0.1em;
+      }
+
+      input,
+      textarea {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
 body.viewer {
   .sidebar {
     display: none;
@@ -7,18 +33,37 @@ body.viewer {
     }
   }
 
-  .share-page {
+  .page-tools {
     float: right;
-    width: 26px;
-    color: $grey;
+    display: block;
 
-    svg {
+    li {
+      display: inline-block;
       width: 26px;
-      height: 26px;
-      fill: currentColor;
+      position: relative;
 
-      & + span {
-        @include text-hide;
+      a {
+        color: $grey;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-colour;
+        }
+      }
+
+      svg {
+        width: 26px;
+        height: 26px;
+        fill: currentColor;
+
+        & + span {
+          @include text-hide;
+        }
+      }
+
+      & > span {
+        @include context-menu (left);
       }
     }
   }
@@ -104,6 +149,7 @@ body.viewer {
             a {
               color: $light-grey;
               text-decoration: none;
+              cursor: pointer;
 
               &:hover {
                 color: $primary-colour;
@@ -141,6 +187,17 @@ body.viewer {
                   & + button {
                     margin-top: 10px;
                   }
+                }
+              }
+            }
+
+            &.share {
+              & > span {
+                padding: 0;
+
+                .form {
+                  padding-top: 0;
+                  padding-bottom: 0;
                 }
               }
             }
@@ -242,7 +299,7 @@ body.viewer {
 
     table {
       min-width: 100%;
-      
+
       thead {
         background-color: #fff;
       }

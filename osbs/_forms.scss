@@ -1,6 +1,5 @@
 .form-control {
   padding: .65em 1em .45em 1em;
-  height: 2.6em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -39,6 +38,7 @@ label {
   input[type="url"],
   input[type="week"],
   input:not([type]),
+  textarea,
   .select {
     @extend .form-control;
 
@@ -59,6 +59,25 @@ label {
   		opacity: 0.8;
   		background-color: lighten($light-grey, 8%);
   	}
+  }
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  input:not([type]),
+  .select {
+    height: 2.6em;
   }
 
   .input-group {
