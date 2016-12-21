@@ -241,6 +241,8 @@ body.viewer {
     border-radius: $border-radius-base;
 
     table {
+      min-width: 100%;
+      
       thead {
         background-color: #fff;
       }
