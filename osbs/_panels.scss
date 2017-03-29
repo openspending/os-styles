@@ -1,0 +1,59 @@
+.aside-panel {
+  margin-bottom: 0;
+  display: table;
+  width: 100%;
+  font-size: 0.9em;
+
+  & > div {
+    padding: $base-spacing/4 $base-spacing/2;
+
+    &:first-child {
+      padding-top: $base-spacing/2;
+    }
+
+    &:last-child {
+      padding-bottom: $base-spacing/2;
+    }
+  }
+
+  .icon {
+    width: 36px;
+    svg {
+      fill: currentColor;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .heading {
+    display: inline;
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  .action {
+    a {
+      @include button-variant($text-color, $panel-bg, $text-color);
+      font-size: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    & > div {
+      display: table-cell;
+      vertical-align: middle;
+      padding: $base-spacing $base-spacing/2;
+
+      &:first-child {
+        padding: $base-spacing $base-spacing/2 $base-spacing $base-spacing;
+      }
+
+      &:last-child {
+        text-align: right;
+        padding: $base-spacing $base-spacing $base-spacing $base-spacing/2;
+      }
+    }
+  }
+}
