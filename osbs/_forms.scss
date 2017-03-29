@@ -47,12 +47,18 @@ label {
   		box-shadow: 0 0 6px rgba($red, .2);
   	}
 
+    &[required],
+    &.success {
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+
   	&[required] {
-  		background: url("../img/form/icon-required.svg") no-repeat top right;
+  		background-image: url("../img/form/icon-required.svg");
   	}
 
   	&.success {
-  		background: url("../img/form/icon-success.svg") no-repeat top right;
+  		background-image: url("../img/form/icon-success.svg");
   	}
 
   	&[disabled] {
