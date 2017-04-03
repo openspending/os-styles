@@ -73,8 +73,7 @@
 
   p {
   	font-size: 1.4rem;
-  	line-height: $line-height-base - 0.1;
-  	color: $text-color;
+  	line-height: $line-height-base;
 
   	a {
   		color: $primary-colour;
@@ -83,7 +82,6 @@
 
   	@media (min-width: $screen-sm-min) {
   		font-size: 1.6rem;
-  		line-height: $line-height-base + 0.1;
   	}
   }
 
@@ -481,6 +479,10 @@
 
   .side .sidebar {
   	max-width: 210px;
+  }
+
+  .rev {
+    @include dark-module;
   }
 
 }
