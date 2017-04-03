@@ -235,6 +235,27 @@ label {
   		pointer-events: none;
   	}
   }
+
+  &.has-group-actions {
+    padding-right: 42px;
+
+    .form-group {
+      position: relative;
+    }
+    .form-group-action {
+      position: absolute;
+      top: 5px;
+      right: -34px;
+      width: 32px;
+      opacity: 0.5;
+
+      svg {
+        width: 32px;
+        height: 32px;
+        fill: $gray;
+      }
+    }
+  }
 }
 
 @mixin minimal-field {
