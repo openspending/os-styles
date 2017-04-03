@@ -1,3 +1,17 @@
+i.icon {
+  display: inline-block;
+  svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+    position: relative;
+    bottom: -0.25em;
+  }
+}
+
+
+//deprecated
+
 $path-to-fonts: "../fonts";
 
 @font-face {
