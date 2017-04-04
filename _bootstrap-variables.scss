@@ -494,8 +494,8 @@ $pagination-disabled-border:           #fff;
 // $state-warning-bg:               #fcf8e3
 // $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%)
 
-// $state-danger-text:              #a94442
-// $state-danger-bg:                #f2dede
+$state-danger-text:              #fff;
+$state-danger-bg:                $brand-danger;
 // $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%)
 
 //== Tooltips
@@ -601,7 +601,7 @@ $modal-md:                    700px;
 //
 //## Define alert colors, border radius, and padding.
 
-// $alert-padding:               15px
+$alert-padding:               12px 15px 10px;
 // $alert-border-radius:         $border-radius-base
 // $alert-link-font-weight:      bold
 

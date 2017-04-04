@@ -14,6 +14,7 @@
 
 label {
   font-weight: 500;
+  font-size: 0.9em;
 }
 
 .form {
@@ -39,7 +40,8 @@ label {
   input[type="week"],
   input:not([type]),
   textarea,
-  .select {
+  .select,
+  .upload-input {
     @extend .form-control;
 
     &.alert {
@@ -65,6 +67,16 @@ label {
   		opacity: 0.8;
   		background-color: lighten($light-grey, 8%);
   	}
+
+    & + div.alert {
+      margin-top: -23px;
+      margin-left: 1px;
+      margin-right: 1px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      font-size: 0.8em;
+      padding: 4px 10px 2px;
+    }
   }
 
   input[type="color"],
@@ -247,12 +259,80 @@ label {
       top: 5px;
       right: -34px;
       width: 32px;
-      opacity: 0.5;
+      opacity: 0.3;
+      cursor: pointer;
+      padding: 4px;
 
       svg {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
         fill: $gray;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .upload-input {
+    display: table;
+    padding: 0;
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-select,
+    .file-display {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .file-select {
+      width: 1%;
+      padding-left: 4px;
+
+      .btn {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+
+    .file-display {
+      height: auto;
+      background-color: transparent !important;
+      border: none;
+      box-shadow: none;
+      opacity: 1;
+    }
+  }
+
+  .form-group.choice {
+    .or {
+      text-align: center;
+      opacity: 0.7;
+      padding-top: $padding-base-vertical;
+      padding-bottom: $padding-base-vertical;
+
+      &:before,
+      &:after {
+        content: '-';
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+
+      & > div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .or {
+        width: 5%;
       }
     }
   }
