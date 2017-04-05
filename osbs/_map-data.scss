@@ -1,0 +1,441 @@
+.map-data-columns {
+  position: relative;
+}
+
+.data-column {
+  @include make-sm-column(6);
+  @include make-md-column(4);
+  @include make-lg-column(3);
+  @media (min-width: 2436px) {
+    width: 400px;
+  }
+  padding: 8px;
+  border: solid 2px rgba($gray-lighter,0);
+
+  & > .inner {
+    overflow: hidden;
+    position: relative;
+    @include box-shadow(0px 0px 0px 2px rgba($grey,0.1));
+    background-color: $dark-grey;
+    height: 280px;
+
+    header {
+      @include dark-module;
+      padding: $padding-large-vertical $grid-gutter-width/2;
+
+      .toggle {
+        float: right;
+        margin-top: 2px;
+        margin-right: -2px;
+      }
+
+      .icon {
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        float: right;
+        margin-top: 1px;
+        margin-right: -4px;
+        opacity: 0.8;
+
+        svg {
+          width: 22px;
+          height: 22px;
+          fill: currentColor;
+        }
+
+        &.remove {
+          margin-top: -1px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 17px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .description {
+        display: block;
+        font-size: 14px;
+        color: inherit;
+        opacity: 0.8;
+
+        &.add {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .preview {
+      background-color: $dark-grey;
+      font-size: 14px;
+      padding: 10px 10px 0 10px;
+      opacity: 0.75;
+      @include transition(opacity, 0.5s, ease-out);
+
+      ol {
+        display: table;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        counter-reset: section;
+        border: solid 1px darken($light-grey,3%);
+        border-radius: $border-radius-base;
+        background-color: rgba(#fff,0.9);
+      }
+
+      li {
+        display: table-row;
+
+        &:before {
+          display: table-cell;
+          counter-increment: section;
+          content: counter(section);
+          width: 30px;
+          text-align: center;
+          border-bottom: solid 1px darken($light-grey,3%);
+          border-right: solid 1px darken($light-grey,3%);
+          color: rgba($grey,0.7);
+        }
+        span {
+          display: table-cell;
+          border-bottom: solid 1px darken($light-grey,3%);
+          padding: 3px 8px 1px 8px;
+          color: rgba($grey,0.7);
+        }
+
+        &:first-child {
+          span {
+            padding-top: 6px;
+          }
+        }
+      }
+
+      &.empty {
+        width: 100%;
+        text-align: center;
+
+        span {
+          color: rgba(#fff,0.5);
+          display: block;
+          padding-top: 30px;
+        }
+      }
+    }
+
+    .constant {
+      textarea {
+        width: 100%;
+        padding: 36px 10px 0 10px;
+        text-align: center;
+        background-color: desaturate(lighten($dark-grey, 25%), 7%);
+        outline: 0;
+        border: none;
+        resize: none;
+        color: #fff;
+        height: 100px;
+        @include transition(background-color, 0.5s, ease-out);
+
+        &:hover {
+          background-color: desaturate(lighten($dark-grey, 20%), 7%);
+        }
+
+        &:focus {
+          background-color: $dark-grey;
+        }
+      }
+    }
+
+    .field-info {
+      @include transition(bottom, 0.5s, ease-out);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+
+      label {
+        display: block;
+        font-size: 12px;
+        opacity: 0.5;
+        margin-top: $grid-gutter-width/2;
+        margin-bottom: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        &:first-child {
+          margin-top: 5px;
+        }
+      }
+
+      input {
+        @include minimal-field;
+      }
+
+      textarea {
+        @include minimal-textarea;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        height: 15px;
+        @include gradient-vertical(transparent, rgba($dark-grey,0.1), 0%, 100%);
+        position: absolute;
+        width: 100%;
+        top: -15px;
+        left: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .data-type-select {
+    display: none;
+
+    .mm-navbar {
+      border-color: $light-grey;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .mm-panel {
+      &:after {
+        height: 0;
+      }
+    }
+
+    .mm-listview {
+      margin-bottom: 0;
+
+      & > li {
+        .mm-next {
+          &:before {
+            width: 26px;
+            height: 26px;
+            background-color: $grey;
+            position: absolute;
+            left: auto;
+            right: 13px;
+            top: 50%;
+            margin-top: -13px;
+            border-radius: 50%;
+          }
+          &:after {
+            border-color: #fff;
+          }
+        }
+
+        &.type-1 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 30);
+            }
+          }
+        }
+        &.type-2 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 60);
+            }
+          }
+        }
+        &.type-3 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 90);
+            }
+          }
+        }
+        &.type-4 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 120);
+            }
+          }
+        }
+        &.type-5 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 140);
+            }
+          }
+        }
+        &.type-6 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 170);
+            }
+          }
+        }
+        &.type-7 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 200);
+            }
+          }
+        }
+        &.type-8 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 230);
+            }
+          }
+        }
+        &.type-9 {
+          .mm-next {
+            &:before {
+              background-color: adjust_hue($primary-colour, 260);
+            }
+          }
+        }
+      }
+
+      li {
+        &:after {
+          left: 0;
+        }
+      }
+
+      .separator {
+        display: none;
+      }
+
+      small {
+        font-size: 12px;
+        display: block;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.add {
+    & > div {
+      display: table;
+      border: dashed 2px $light-grey;
+      text-align: center;
+      width: 100%;
+      @include box-shadow(none);
+
+      &:hover {
+        border-color: $primary-colour;
+      }
+
+      & > a {
+        display: table-cell;
+        vertical-align: middle;
+        color: darken($light-grey, 10%);
+        text-decoration: none;
+
+        svg {
+          width: 100%;
+          height: 30px;
+          fill: currentColor;
+        }
+
+        &:hover {
+          color: $primary-colour;
+        }
+      }
+    }
+  }
+
+  &.data-type-select-active {
+    .data-type-select {
+      visibility: visible;
+    }
+  }
+
+  &.mm-wrapper {
+    overflow: visible;
+  }
+
+  .toggle {
+    @include switch;
+  }
+}
+
+
+.data-edit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba($dark-grey,0.7);
+
+  .data-column {
+    display: none;
+
+    & > .inner {
+      height: 550px;
+    }
+
+    &.active {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50vh;
+      width: 400px;
+      margin-left: -200px;
+      margin-top: -430px;
+      background-color: adjust_hue($primary-colour, 30);
+      border-radius: $border-radius-base;
+    }
+
+    .data-type-select {
+      display: block;
+      background-color: #fff;
+
+      * {
+        overflow: hidden; //prevent flash of scrollbar
+      }
+    }
+  }
+}
+
+.data-columns {
+  @include clearfix;
+  padding: 10px;
+
+  .data-column {
+
+    .preview {
+      &:not(.empty):hover {
+        opacity: 1;
+
+        & + .field-info {
+          bottom: -120px;
+        }
+      }
+    }
+
+    .field-info {
+      padding: 10px;
+    }
+
+    &.add {
+      & > div {
+        background-color: transparent;
+      }
+    }
+
+    &.active {
+      display: none;
+    }
+  }
+}
