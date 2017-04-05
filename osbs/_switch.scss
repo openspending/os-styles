@@ -1,5 +1,8 @@
 @mixin switch {
-  position: relative; width: 36px;
+  $switch-size: 18px;
+  $border-size: 2px;
+
+  width: $switch-size*2;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select: none;
@@ -10,53 +13,38 @@
 
   label {
     display: block;
-    overflow: hidden;
+    height: $switch-size;
     cursor: pointer;
     border: 2px solid rgba($light-grey,0.2);
     border-radius: 0px;
     padding: 0;
     margin: 0;
+    position: relative;
 
     .inner {
       display: block;
       width: 200%;
       margin-left: -100%;
       @include transition( margin 0.3s ease-in 0s);
-
-      &:before,
-      &:after {
-        display: block;
-        float: left;
-        width: 50%;
-        height: 14px;
-        padding: 0;
-        box-sizing: border-box;
-        border: 2px solid transparent;
-        background-clip: padding-box;
-      }
-
-      &:before {
-        content: "";
-        padding-left: 10px;
-      }
-
-      &:after {
-        content: "";
-        padding-right: 10px;
-        text-align: right;
-      }
     }
 
     .switch {
       display: block;
-      width: 18px;
+      width: $switch-size;
       margin: 0px;
       background: lighten($grey,20%);
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: -$border-size;
+      bottom: -$border-size;
       right: 18px;
       @include transition(all 0.3s ease-in 0s);
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: $switch-size*2.5;
+      line-height: $switch-size - $border-size;
     }
   }
 
@@ -65,7 +53,7 @@
       margin-left: 0;
     }
     & + .label .switch {
-      right: 0px;
+      right: -$border-size;
       background-color: $primary-colour;
     }
   }
