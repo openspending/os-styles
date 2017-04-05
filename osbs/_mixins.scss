@@ -12,6 +12,10 @@
 @mixin dark-module($bg:$grey) {
   background-color: $bg;
   @include light-text;
+
+  #{$text-inputs-list} {
+    background-color: $bg;
+  }
 }
 
 // Copied from the BS .btn class, because BS doesn't have a mixin for this!
