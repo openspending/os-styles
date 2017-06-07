@@ -1,0 +1,131 @@
+.landing {
+  .wrapper {
+    @include container-fixed();
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+    }
+  }
+
+  .site-header {
+    background-color: transparent;
+    color: $grey;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .section {
+    .inner {
+      @include container-fixed();
+      max-width: 830px;
+    }
+  }
+
+  .what,
+  .publishers,
+  .hackers,
+  .society {
+    .inner {
+      font-size: 5vmin;
+      font-weight: 500;
+
+      h2 {
+        font-size: 1.3em;
+        font-weight: 600;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  .search {
+    background-color: $lighter-grey;
+  }
+
+  .what {
+    background-color: $grey;
+    @include light-text;
+  }
+
+  .publishers {
+    background-color: $green;
+    @include light-text;
+  }
+
+  .hackers {
+    background-color: $purple;
+    @include light-text;
+  }
+
+  .society {
+    background-color: $blue;
+    @include light-text;
+  }
+
+  &.fp-viewing-0,
+  &.fp-viewing-5 {
+    .logo {
+      svg {
+        fill: $grey;
+      }
+      &.small{
+        background-color: $grey;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &.fp-viewing-1,
+  &.fp-viewing-2,
+  &.fp-viewing-3,
+  &.fp-viewing-4 {
+    .site-header {
+      color: #fff;
+    }
+  }
+
+  &.fp-viewing-2 {
+    .logo {
+      &.small{
+        svg {
+          fill: $green;
+        }
+      }
+    }
+  }
+  &.fp-viewing-3 {
+    .logo {
+      &.small{
+        svg {
+          fill: $purple;
+        }
+      }
+    }
+  }
+  &.fp-viewing-4 {
+    .logo {
+      &.small{
+        svg {
+          fill: $blue;
+        }
+      }
+    }
+  }
+
+  &.fp-viewing-6 {
+    .site-header {
+      display: none;
+    }
+  }
+}

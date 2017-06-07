@@ -48,16 +48,22 @@
           fill: #fff;
         }
       }
+    }
 
-      & + .logo {
-        display: none;
-        margin-top: 15px;
-        padding-left:12px;
+    &.type {
+      margin-top: 15px;
+      padding-left:12px;
+      height: 26px;
+      display: none;
+
+      svg {
+        fill: #fff;
         height: 26px;
+        width: auto;
+      }
 
-        @media (min-width: $screen-sm-min) {
-          display: inline-block;
-        }
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
       }
     }
   }
