@@ -31,6 +31,7 @@
       svg {
         fill: $grey;
         width: 32px;
+        height: 32px *0.618; // height based on viewbox, for IE
       }
 
       @if $primary-colour != $default-primary-colour {
@@ -64,6 +65,12 @@
 
       @media (min-width: $screen-sm-min) {
         display: inline-block;
+      }
+
+      &.openspending {
+        svg {
+          width: 26px *7.12; // width based on viewbox, for IE
+        }
       }
     }
   }
