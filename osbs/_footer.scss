@@ -167,10 +167,17 @@ html,
         }
       }
 
+      .packager {
+        svg {
+          width: 16px *6.03; // based on viewbox, for IE
+        }
+      }
+
       .viewer {
         svg {
           height: 13px;
           top: 1px;
+          width: 13px *6.02; // based on viewbox, for IE
         }
       }
 
