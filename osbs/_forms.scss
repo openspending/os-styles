@@ -68,6 +68,7 @@ label {
 
   .input-group {
     position: relative;
+    width: 100%;
 
     .input-group-addon {
       position: absolute;
@@ -78,6 +79,7 @@ label {
       width: 2.5em;
       padding: .85em 0.1em;
       opacity: 0.3;
+      font-size: inherit;
 
       & + input {
         text-indent: 2em;
@@ -85,13 +87,16 @@ label {
 
   		@mixin icon($image) {
   			background-image: url($image);
-  			background-position: .75em center;
+  			background-position: center;
   			background-size: 1.4em auto;
         background-repeat: no-repeat;
   		}
 
   		&.user {
   			@include icon("../os-assets/icons/user.svg");
+  		}
+      &.search {
+  			@include icon("../os-assets/icons/search.svg");
   		}
 
       & + input {
@@ -101,6 +106,8 @@ label {
     }
 
     input[type="text"] {
+      font-size: inherit;
+
       &:not(:first-child):not(:last-child),
       &:not(:first-child),
       &:not(:last-child) {
