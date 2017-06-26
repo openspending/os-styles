@@ -10,18 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smth/os-bootstrap.git"
+    "url": "git+https://github.com/openspending/os-styles.git"
   },
   "keywords": [
     "openspending",
     "stylesheets"
   ],
-  "author": "Open Knowledge International",
+  "author": "Open Knowledge International <info@okfn.org> (https://okfn.org)",
+  "contributors": [
+    "Sam Smith (http://www.mintcanary.com)",
+    "Vitor Baptista <vitor@vitorbaptista.com> (https://vitorbaptista.com)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smth/os-bootstrap/issues"
+    "url": "https://github.com/openspending/openspending/issues"
   },
-  "homepage": "https://github.com/smth/os-bootstrap#readme",
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
     "node-sass": "^4.5.3",
