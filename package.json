@@ -5,7 +5,8 @@
   "scripts": {
     "test": "stylelint 'src/**/*.scss'",
     "test:fix": "stylelint 'src/**/*.scss' --fix",
-    "build": "node-sass --source-map true src/ -o lib/"
+    "build": "node-sass --source-map true src/ -o lib/",
+    "prepublish": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
