@@ -9,16 +9,19 @@
     .btn {
       outline: none;
     }
-    .popover-navigation {
 
+    .popover-navigation {
       .btn-group {
         margin-bottom: 5px;
         display: block;
+
         @include clearfix;
 
         .btn {
           width: 100%;
+
           @include button-variant(#fff, $primary-colour, $grey);
+
           @media (min-width: $screen-sm-min) {
             width: 50%;
           }
@@ -37,7 +40,7 @@
         line-height: 20px;
         border: none;
 
-        &:before {
+        &::before {
           content: '×';
           color: #fff;
           display: block;

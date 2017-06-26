@@ -1,29 +1,36 @@
 .describe-columns {
   @include clearfix;
+
   margin: 10px;
 
   & > div {
     @include make-sm-column(6);
     @include make-md-column(4);
     @include make-lg-column(3);
+
     @media (min-width: 2436px) {
       width: 400px;
     }
+
     padding: 10px;
 
     & > .inner {
       height: 320px;
       overflow: hidden;
       position: relative;
-      @include box-shadow(0px 0px 0px 2px rgba($grey,0.1));
+
+      @include box-shadow(0 0 0 2px rgba($grey, 0.1));
 
       header {
         @include dark-module;
+
         padding: $padding-large-vertical $grid-gutter-width/2;
 
         .toggle {
           float: right;
+
           @include switch;
+
           margin-top: 2px;
           margin-right: -2px;
         }
@@ -68,8 +75,9 @@
       .preview {
         background-color: $dark-grey;
         font-size: 14px;
-        padding: 10px 10px 0 10px;
+        padding: 10px 10px 0;
         opacity: 0.75;
+
         @include transition(opacity, 0.5s, ease-out);
 
         &:not(.empty):hover {
@@ -86,29 +94,30 @@
           padding: 0;
           margin: 0;
           counter-reset: section;
-          border: solid 1px darken($light-grey,3%);
+          border: solid 1px darken($light-grey, 3%);
           border-radius: $border-radius-base;
-          background-color: rgba(#fff,0.9);
+          background-color: rgba(#fff, 0.9);
         }
 
         li {
           display: table-row;
 
-          &:before {
+          &::before {
             display: table-cell;
             counter-increment: section;
             content: counter(section);
             width: 30px;
             text-align: center;
-            border-bottom: solid 1px darken($light-grey,3%);
-            border-right: solid 1px darken($light-grey,3%);
-            color: rgba($grey,0.7);
+            border-bottom: solid 1px darken($light-grey, 3%);
+            border-right: solid 1px darken($light-grey, 3%);
+            color: rgba($grey, 0.7);
           }
+
           span {
             display: table-cell;
-            border-bottom: solid 1px darken($light-grey,3%);
-            padding: 3px 8px 1px 8px;
-            color: rgba($grey,0.7);
+            border-bottom: solid 1px darken($light-grey, 3%);
+            padding: 3px 8px 1px;
+            color: rgba($grey, 0.7);
           }
 
           &:first-child {
@@ -123,7 +132,7 @@
           text-align: center;
 
           span {
-            color: rgba(#fff,0.5);
+            color: rgba(#fff, 0.5);
             display: block;
             padding-top: 30px;
           }
@@ -133,7 +142,7 @@
       .constant {
         textarea {
           width: 100%;
-          padding: 36px 10px 0 10px;
+          padding: 36px 10px 0;
           text-align: center;
           background-color: rgba($dark-grey, 0.75);
           outline: 0;
@@ -141,6 +150,7 @@
           resize: none;
           color: #fff;
           height: 100px;
+
           @include transition(background-color, 0.5s, ease-out);
 
           &:hover {
@@ -160,6 +170,7 @@
         left: 0;
         right: 0;
         background-color: #fff;
+
         @include transition(bottom, 0.5s, ease-out);
 
         label {
@@ -184,11 +195,13 @@
           @include minimal-textarea;
         }
 
-        &:before {
+        &::before {
           content: '';
           display: block;
           height: 15px;
-          @include gradient-vertical(transparent, rgba($dark-grey,0.1), 0%, 100%);
+
+          @include gradient-vertical(transparent, rgba($dark-grey, 0.1), 0%, 100%);
+
           position: absolute;
           width: 100%;
           top: -15px;
@@ -221,7 +234,7 @@
       }
 
       .mm-panel {
-        &:after {
+        &::after {
           height: 0;
         }
       }
@@ -231,7 +244,7 @@
         font-weight: 500;
 
         li {
-          &:after {
+          &::after {
             left: 0;
           }
         }
@@ -250,8 +263,10 @@
 
     &.disabled {
       opacity: 0.5;
+
       & > div {
         @include box-shadow(none);
+
         background-color: $dark-grey;
       }
     }
@@ -263,6 +278,7 @@
         text-align: center;
         width: 100%;
         background-color: transparent;
+
         @include box-shadow(none);
 
         &:hover {
@@ -290,7 +306,7 @@
 
     &.complete {
       & > div {
-        //@include box-shadow(0px 0px 0px 2px $primary-colour);
+        //@include box-shadow(0 0 0 2px $primary-colour);
       }
     }
 

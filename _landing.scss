@@ -5,9 +5,11 @@
     @media (min-width: $screen-sm-min) {
       width: $container-sm;
     }
+
     @media (min-width: $screen-md-min) {
       width: $container-md;
     }
+
     @media (min-width: $screen-lg-min) {
       width: $container-lg;
     }
@@ -45,14 +47,17 @@
       ul {
         margin: 0;
         padding: 0;
+
         @include container-fixed();
 
         @media (min-width: $screen-sm-min) {
           width: $container-sm;
         }
+
         @media (min-width: $screen-md-min) {
           width: $container-md;
         }
+
         @media (min-width: $screen-lg-min) {
           width: $container-lg;
         }
@@ -91,11 +96,13 @@
 
             .icon {
               float: left;
+
               @include rotate(180deg);
+
               margin-right: 15px;
             }
-
           }
+
           &.next {
             float: right;
             text-align: right;
@@ -152,10 +159,10 @@
 
         h3 {
           font-size: 15px;
-          border-bottom: solid 1px rgba($text-color,0.1);
+          border-bottom: solid 1px rgba($text-color, 0.1);
           margin: $base-spacing/2 0 1em 0;
           padding: 6px 0;
-          color: rgba($text-color,0.25);
+          color: rgba($text-color, 0.25);
           position: relative;
 
           .icon {
@@ -175,7 +182,7 @@
         a {
           display: block;
           margin-top: 3vh;
-          color: rgba($text-color,0.75);
+          color: rgba($text-color, 0.75);
           text-decoration: none;
 
           &:hover {
@@ -209,6 +216,7 @@
             padding-left: 0;
           }
         }
+
         &.app {
           .inner {
             padding-right: 0;
@@ -239,6 +247,7 @@
 
   .what {
     background-color: $grey;
+
     @include light-text;
 
     nav {
@@ -255,6 +264,7 @@
 
   .publishers {
     background-color: $green;
+
     @include light-text;
 
     nav {
@@ -271,6 +281,7 @@
 
   .hackers {
     background-color: $purple;
+
     @include light-text;
 
     nav {
@@ -287,6 +298,7 @@
 
   .society {
     background-color: $blue;
+
     @include light-text;
 
     nav {
@@ -319,8 +331,10 @@
       svg {
         fill: $grey;
       }
-      &.small{
+
+      &.small {
         background-color: $grey;
+
         svg {
           fill: #fff;
         }
@@ -339,25 +353,27 @@
 
   &.fp-viewing-publishers {
     .logo {
-      &.small{
+      &.small {
         svg {
           fill: $green;
         }
       }
     }
   }
+
   &.fp-viewing-hackers {
     .logo {
-      &.small{
+      &.small {
         svg {
           fill: $purple;
         }
       }
     }
   }
+
   &.fp-viewing-society {
     .logo {
-      &.small{
+      &.small {
         svg {
           fill: $blue;
         }

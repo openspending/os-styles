@@ -15,15 +15,15 @@
 
   .btn {
     @include button-variant(#fff, transparent, #fff);
+
     margin: $base-spacing /2;
   }
 }
 
-
 $footer-background: $dark-grey;
 $footer-color: white;
-$footer-link-color: transparentize($footer-color, .4);
-$footer-disclaimer-color: transparentize($footer-color, .6);
+$footer-link-color: transparentize($footer-color, 0.4);
+$footer-disclaimer-color: transparentize($footer-color, 0.6);
 
 html,
 .site-footer {
@@ -32,8 +32,8 @@ html,
 
 .site-footer {
   width: 100%;
-  position:relative;
-  color:$footer-color;
+  position: relative;
+  color: $footer-color;
   text-align: center;
 
   @media (min-width: $screen-md-min) {
@@ -46,7 +46,7 @@ html,
     .footer-logo {
       margin-right: 1em;
       margin-bottom: 1em;
-      margin-top:-4px;
+      margin-top: -4px;
     }
 
     .footer-logo {
@@ -64,6 +64,7 @@ html,
         img {
           height: 2em;
         }
+
         svg {
           height: 2em;
         }
@@ -75,7 +76,7 @@ html,
     }
 
     ul {
-      margin: 0 0 1em 0;
+      margin: 0 0 1em;
       padding: 0;
 
       @media (min-width: $screen-md-min) {
@@ -102,8 +103,8 @@ html,
         color: transparentize($footer-color, 0);
       }
 
-      &[rel~="external"]:after {
-        display:none;
+      &[rel~="external"]::after {
+        display: none;
       }
     }
 
@@ -114,7 +115,7 @@ html,
       }
 
       li {
-        font-size: .8em;
+        font-size: 0.8em;
         font-weight: 400;
         line-height: 2em;
       }
@@ -129,7 +130,7 @@ html,
 
         li {
           font-size: 1em;
-          padding-right: .7em;
+          padding-right: 0.7em;
           display: inline-block;
 
           @media (min-width: $screen-md-min) {
@@ -142,7 +143,7 @@ html,
         }
 
         img {
-          opacity: .7;
+          opacity: 0.7;
           height: 1.6em;
           padding: 1px;
 
@@ -152,6 +153,7 @@ html,
         }
       }
     }
+
     .footer-primary-links {
       svg {
         height: 16px;
@@ -198,13 +200,13 @@ html,
   }
 
   hr {
-    border-color:$footer-disclaimer-color;
+    border-color: $footer-disclaimer-color;
     clear: both;
   }
 
   p {
-    font-size:0.7em;
-    color:$footer-disclaimer-color;
+    font-size: 0.7em;
+    color: $footer-disclaimer-color;
   }
 
   .supporters {
@@ -212,8 +214,9 @@ html,
       font-size: 12px;
       color: rgba(#fff, 0.3);
       font-weight: 400;
-      margin: 0 0 0.2em 0;
+      margin: 0 0 0.2em;
     }
+
     ul {
       padding: 0;
       margin: 0;
@@ -237,6 +240,7 @@ html,
           &:first-child {
             text-align: left;
           }
+
           &:last-child {
             text-align: right;
           }

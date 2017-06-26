@@ -3,8 +3,8 @@
   $border-size: 2px;
 
   width: $switch-size*2;
-  -webkit-user-select:none;
-  -moz-user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
 
   input {
@@ -15,8 +15,8 @@
     display: block;
     height: $switch-size;
     cursor: pointer;
-    border: 2px solid rgba($light-grey,0.2);
-    border-radius: 0px;
+    border: 2px solid rgba($light-grey, 0.2);
+    border-radius: 0;
     padding: 0;
     margin: 0;
     position: relative;
@@ -25,18 +25,20 @@
       display: block;
       width: 200%;
       margin-left: -100%;
+
       @include transition( margin 0.3s ease-in 0s);
     }
 
     .switch {
       display: block;
       width: $switch-size;
-      margin: 0px;
-      background: lighten($grey,20%);
+      margin: 0;
+      background: lighten($grey, 20%);
       position: absolute;
       top: -$border-size;
       bottom: -$border-size;
       right: 18px;
+
       @include transition(all 0.3s ease-in 0s);
     }
 
@@ -52,6 +54,7 @@
     & + .label .inner {
       margin-left: 0;
     }
+
     & + .label .switch {
       right: -$border-size;
       background-color: $primary-colour;

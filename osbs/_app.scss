@@ -6,6 +6,7 @@
 
   & > aside {
     @include dark-module;
+
     position: relative;
     font-size: 0.9em;
     z-index: 1;
@@ -16,7 +17,7 @@
       vertical-align: top;
       padding-bottom: 2em;
 
-      &:before {
+      &::before {
         content: '';
         display: block;
         height: 52px;
@@ -71,8 +72,8 @@
         }
       }
     }
-
   }
+
   .content {
     background-color: $gray-lighter;
 

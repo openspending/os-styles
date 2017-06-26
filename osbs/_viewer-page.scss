@@ -107,9 +107,11 @@ body.viewer {
 
     @media (min-width: $screen-sm-min) {
       @include add-box();
+
       border-radius: $border-radius-base;
       margin-bottom: $grid-gutter-width;
       font-size: 14px;
+
       @include transition(padding, 0.3s);
 
       span {
@@ -171,6 +173,7 @@ body.viewer {
 
             & > span {
               @include context-menu (left);
+
               width: 230px;
               padding: 10px;
 
@@ -214,7 +217,6 @@ body.viewer {
       }
 
       .chart-body {
-
         .chart-main,
         .chart-info {
           & > div {
@@ -227,6 +229,7 @@ body.viewer {
             padding-bottom: $grid-gutter-width/4;
           }
         }
+
         .chart-info {
           & > div {
             padding-top: $grid-gutter-width/4;
@@ -262,6 +265,7 @@ body.viewer {
               padding: 2px $grid-gutter-width/4 $grid-gutter-width/2 $grid-gutter-width/2;
             }
           }
+
           .chart-info {
             vertical-align: bottom;
 
@@ -273,12 +277,12 @@ body.viewer {
       }
     }
 
-
     & + a.add.visualisation,
     a.add.visualisation {
       padding-top: $grid-gutter-width*0.25;
       padding-bottom: $grid-gutter-width*0.25;
       background-color: transparent;
+
       @include transition-delay(0.2s);
 
       .verbose {
@@ -320,7 +324,7 @@ body.viewer {
 
       tr:hover {
         td {
-          background-color: rgba($primary-colour,0.1);
+          background-color: rgba($primary-colour, 0.1);
         }
       }
     }
@@ -331,6 +335,7 @@ body.viewer {
   display: block;
   padding: 0;
   margin: 0 -10px;
+
   @include clearfix;
 
   li {

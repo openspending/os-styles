@@ -19,7 +19,7 @@ aside {
 
       &.is-expanded {
         .js-accordion-trigger {
-          &:after {
+          &::after {
             @include rotate(90deg);
           }
         }
@@ -27,8 +27,9 @@ aside {
 
       &.filter {
         .js-accordion-trigger {
-          &:before {
+          &::before {
             @include icon-font();
+
             content: "\e904";
             margin-right: 0.5em;
             position: relative;
@@ -38,8 +39,9 @@ aside {
 
         .submenu {
           a.active {
-            &:after {
+            &::after {
               @include icon-font();
+
               content: "\e903";
               position: absolute;
               width: 16px;
@@ -53,7 +55,7 @@ aside {
             }
 
             &:hover {
-              &:after {
+              &::after {
                 opacity: 1;
               }
             }
@@ -61,6 +63,7 @@ aside {
         }
       }
     }
+
     a {
       display: block;
       padding: $base-spacing / 3 $base-spacing;
@@ -69,7 +72,7 @@ aside {
       color: #fff;
 
       &:hover {
-        background-color: rgba(0,0,0,0.15);
+        background-color: rgba(0, 0, 0, 0.15);
       }
 
       .label {
@@ -79,7 +82,7 @@ aside {
       }
 
       &.active {
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0, 0, 0, 0.3);
         border-left: solid 0.4em $primary-colour;
         padding-left: $base-spacing - 0.4em;
 
@@ -89,7 +92,7 @@ aside {
       }
 
       &.js-accordion-trigger {
-        &:after {
+        &::after {
           content: '\203A';
           display: block;
           position: absolute;
@@ -102,6 +105,7 @@ aside {
           line-height: 12px;
           font-size: 1.7em;
           font-weight: 100;
+
           @include transition(all 0.2s ease-in-out);
         }
       }

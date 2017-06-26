@@ -1,0 +1,27 @@
+{
+  "name": "os-styles",
+  "version": "0.0.1",
+  "description": "Stylesheets for OpenSpending",
+  "scripts": {
+    "test": "stylelint '**/*.scss'",
+    "test:fix": "stylelint '**/*.scss' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smth/os-bootstrap.git"
+  },
+  "keywords": [
+    "openspending",
+    "stylesheets"
+  ],
+  "author": "Open Knowledge International",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smth/os-bootstrap/issues"
+  },
+  "homepage": "https://github.com/smth/os-bootstrap#readme",
+  "devDependencies": {
+    "stylelint": "^7.11.1",
+    "stylelint-config-standard": "^16.0.0"
+  }
+}

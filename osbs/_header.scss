@@ -1,6 +1,7 @@
 .site-header,
 .app-header {
   @include dark-module;
+
   position: relative;
 
   a {
@@ -11,6 +12,7 @@
 .site-header {
   .wrapper {
     position: relative;
+
     @include clearfix();
   }
 
@@ -53,7 +55,7 @@
 
     &.type {
       margin-top: 15px;
-      padding-left:12px;
+      padding-left: 12px;
       height: 26px;
       display: none;
 

@@ -2,8 +2,9 @@
   position: relative;
 
   & > a {
-    &:after {
+    &::after {
       @include icon-font();
+
       content: "\e900";
       line-height: 0;
     }
@@ -12,6 +13,7 @@
   .dropdown-menu,
   .user-menu {
     @include transition (all 0.2s ease-in-out);
+
     position: absolute;
     text-align: left;
     z-index: 9;
@@ -48,7 +50,7 @@
         color: inherit;
 
         &:hover {
-          background-color: rgba(#fff,0.2);
+          background-color: rgba(#fff, 0.2);
         }
       }
     }
@@ -58,6 +60,7 @@
     left: auto;
     float: none;
     $menu-height: 6em;
+
     top: 1.5em;
     right: 0;
     min-width: $menu-height * 1.6;
@@ -99,19 +102,20 @@
       }
 
       &.logout {
-
         a {
           background-color: $primary-colour;
           padding: 3px 4px 1px 5px;
           margin: 0;
           white-space: nowrap;
           text-transform: none;
+
           @include transition (all 0.5s ease-in-out);
+
           box-sizing: border-box;
           margin-top: 0.5em;
           color: #fff;
 
-          &:before {
+          &::before {
             content: "\e908";
           }
         }
@@ -136,7 +140,6 @@
   }
 }
 
-
 .main-nav {
   padding: $base-spacing/2 0 0 0;
   margin: 0;
@@ -144,12 +147,12 @@
   margin-left: -0.4em;
 
   a {
-  	text-decoration: none;
+    text-decoration: none;
   }
 
   $highlight-height: 8px;
 
-	li {
+  li {
     list-style: none;
 
     a {
@@ -158,12 +161,12 @@
       padding: $base-spacing /2;
       border-bottom-width: 1px;
       border-style: solid;
-  		color: #fff;
-  		border-color: $grey;
-  	}
+      color: #fff;
+      border-color: $grey;
+    }
   }
 
-	@media (min-width: $screen-md-min) {
+  @media (min-width: $screen-md-min) {
     position: static;
     width: auto;
     background: transparent;
@@ -178,14 +181,16 @@
       a {
         display: inline-block;
         font-size: 1.5rem;
-        padding: .4em .2em;
+        padding: 0.4em 0.2em;
         border-bottom: none;
-        @include transition(all .2s);
+
+        @include transition(all 0.2s);
+
         color: lighten($grey, 50%);
 
-  			.no-touch &:hover {
-  				color: #fff;
-  			}
+        .no-touch &:hover {
+          color: #fff;
+        }
       }
 
       &.selected a,
@@ -193,9 +198,8 @@
         color: #fff;
         box-shadow: 0 ($highlight-height + 2px) 0 #fff;
       }
-
     }
-	}
+  }
 }
 
 .secondary-nav {
@@ -205,7 +209,7 @@
   z-index: 2;
 
   a {
-  	text-decoration: none;
+    text-decoration: none;
   }
 
   li {
@@ -224,8 +228,9 @@
     }
 
     &.user {
-      a:before {
+      a::before {
         @include icon-font();
+
         content: "\e901";
         display: inline-block;
         padding-right: 0.5em;

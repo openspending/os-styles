@@ -1,9 +1,11 @@
 .banner {
   @include dark-module($dark-grey);
+
   padding: $base-spacing*1.5 $base-spacing;
   position: relative;
 
-  h1, h2 {
+  h1,
+  h2 {
     color: inherit;
   }
 
@@ -13,7 +15,9 @@
 
   .cta {
     @extend .btn;
+
     @include button-variant(#fff, transparent, #fff);
+
     padding: 9px 18px;
     min-width: 150px;
     margin-top: $base-spacing * 0.75;
@@ -26,20 +30,23 @@
   .steps {
     li {
       &.current {
-        &:before {
-          background-color: lighten($grey,10%);
+        &::before {
+          background-color: lighten($grey, 10%);
         }
+
         a {
           color: #fff;
           border-color: #fff;
         }
+
         & ~ li:not(.passed) {
-          &:before {
-            background-color: lighten($grey,10%);
+          &::before {
+            background-color: lighten($grey, 10%);
           }
+
           a {
-            color: lighten($grey,10%);
-            border-color: lighten($grey,10%);
+            color: lighten($grey, 10%);
+            border-color: lighten($grey, 10%);
           }
         }
       }

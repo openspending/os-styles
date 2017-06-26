@@ -1,7 +1,9 @@
 .modal-content {
   border-radius: 0;
+
   @include box-shadow (0 5px 15px rgba(0, 0, 0, 0.3));
   @include dark-module;
+
   padding-top: $grid-gutter-width;
   padding-bottom: $grid-gutter-width;
 
@@ -11,7 +13,7 @@
   }
 
   hr {
-    border-top-color: rgba(#fff,0.1);
+    border-top-color: rgba(#fff, 0.1);
   }
 
   .modal-header {

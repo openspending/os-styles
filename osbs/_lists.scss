@@ -6,8 +6,10 @@
 
 .feature-list {
   @include make-row();
+
   li {
     display: block;
+
     @include make-md-column(6);
     @include make-lg-column(4);
 
@@ -32,7 +34,12 @@
         margin: $base-spacing $base-spacing 0 $base-spacing;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-size: 22px;
       }
 
@@ -86,15 +93,17 @@
 .step-list {
   li {
     display: block;
+
     @include make-md-column(6);
     @include make-lg-column(3);
+
     margin-top: $base-spacing;
 
     @media (min-width: $screen-md-min) {
       text-align: left;
       padding-left: 68px;
 
-      &:before {
+      &::before {
         position: absolute;
         left: 0;
         width: 50px;
@@ -108,21 +117,29 @@
         border: solid 3px $primary-colour;
       }
 
-      &:nth-child(1):before {
+      &:nth-child(1)::before {
         content: '1';
       }
-      &:nth-child(2):before {
+
+      &:nth-child(2)::before {
         content: '2';
       }
-      &:nth-child(3):before {
+
+      &:nth-child(3)::before {
         content: '3';
       }
-      &:nth-child(4):before {
+
+      &:nth-child(4)::before {
         content: '4';
       }
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-size: 22px;
       margin-top: 0;
       margin-bottom: 0.3em;
@@ -156,7 +173,7 @@
       margin-left: -32px;
     }
 
-    &:before {
+    &::before {
       content: '';
       display: block;
       height: 2px;
@@ -169,27 +186,30 @@
 
     &:last-child {
       width: auto;
-      &:before {
+
+      &::before {
         display: none;
       }
     }
 
     &.current {
-      &:before {
-        background-color: lighten($grey,40%);
+      &::before {
+        background-color: lighten($grey, 40%);
       }
+
       a {
         color: $grey;
         border-color: $grey;
       }
 
       & ~ li:not(.passed) {
-        &:before {
-          background-color: lighten($grey,40%);
+        &::before {
+          background-color: lighten($grey, 40%);
         }
+
         a {
-          color: lighten($grey,40%);
-          border-color: lighten($grey,40%);
+          color: lighten($grey, 40%);
+          border-color: lighten($grey, 40%);
         }
       }
     }
