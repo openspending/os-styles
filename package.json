@@ -4,7 +4,8 @@
   "description": "Stylesheets for OpenSpending",
   "scripts": {
     "test": "stylelint 'src/**/*.scss'",
-    "test:fix": "stylelint 'src/**/*.scss' --fix"
+    "test:fix": "stylelint 'src/**/*.scss' --fix",
+    "build": "node-sass --source-map true src/ -o lib/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/smth/os-bootstrap#readme",
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "node-sass": "^4.5.3",
     "stylelint": "^7.11.1",
     "stylelint-config-standard": "^16.0.0"
   }
