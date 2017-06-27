@@ -10,7 +10,7 @@
 
   .banner {
     text-align: center;
-    background-image: url("../img/next/banner.jpg");
+    background-image: url("#{$assets-path}/img/next/banner.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-color: #232429;

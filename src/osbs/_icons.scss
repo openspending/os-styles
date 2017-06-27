@@ -14,7 +14,7 @@ i.icon {
 
 //deprecated
 
-$path-to-fonts: "../fonts";
+$path-to-fonts: "#{$assets-path}/fonts";
 
 @font-face {
   font-family: 'os-icons';

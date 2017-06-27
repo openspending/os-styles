@@ -38,11 +38,11 @@ label {
     }
 
     &[required] {
-      background-image: url("../img/form/icon-required.svg");
+      background-image: url("#{$assets-path}/img/form/icon-required.svg");
     }
 
     &.success {
-      background-image: url("../img/form/icon-success.svg");
+      background-image: url("#{$assets-path}/img/form/icon-success.svg");
     }
 
     &[disabled] {
@@ -92,11 +92,11 @@ label {
       }
 
       &.user {
-        @include icon("../os-assets/icons/user.svg");
+        @include icon("#{$assets-path}/icons/user.svg");
       }
 
       &.search {
-        @include icon("../os-assets/icons/search.svg");
+        @include icon("#{$assets-path}/icons/search.svg");
       }
 
       & + input {
@@ -158,14 +158,14 @@ label {
 
     &::after {
       left: 0;
-      background: url('../img/form/icon-check.svg') no-repeat center center;
+      background: url('#{$assets-path}/img/form/icon-check.svg') no-repeat center center;
       display: none;
     }
   }
 
   .radio-label {
     &::after {
-      background-image: url('../img/form/icon-radio.svg');
+      background-image: url('#{$assets-path}/img/form/icon-radio.svg');
     }
 
     &::before {
@@ -222,7 +222,7 @@ label {
       display: block;
       width: 12px;
       height: 12px;
-      background: url('../img/form/icon-select.svg') no-repeat center center;
+      background: url('#{$assets-path}/img/form/icon-select.svg') no-repeat center center;
       pointer-events: none;
     }
   }
