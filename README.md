@@ -16,4 +16,21 @@ need to be made available by your webserver.
 
 To do so, you need to copy the contents of the `src/assets` folder somewhere
 your webserver can serve them, and change the `$assets-path` variable to where
-this folder is available relative to your stylesheets.
+this folder is available relative to your stylesheets. For example, imagine
+we're in a project that has installed `os-styles` via `npm`, and we want to
+import its stylesheets. You'd do:
+
+```sass
+@import "node_modules/os-styles/src/variables";
+
+$assets-path: "/assets";
+
+@import "node_modules/os-styles/src/base";
+
+// Continue with my custom styles...
+```
+
+This means that the stylesheets would expect the assets to be available on
+`http://example.com/assets` (considering the website lives in
+`http://example.com`). You have to make the contents of
+`node_modules/os-styles/src/assets` available at that location.
