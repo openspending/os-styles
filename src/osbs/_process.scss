@@ -5,7 +5,9 @@
   .banner {
     @include make-row();
 
-    text-align: center;
+    @media (min-width: $screen-md-min) {
+      text-align: center;
+    }
 
     .process-steps {
       @include make-sm-column(6);
@@ -31,15 +33,23 @@
     }
 
     .step-title {
-      margin: 0;
+      margin-bottom: 0;
       font-size: 24px;
       line-height: 1;
+
+      @media (min-width: $screen-sm-min) {
+        margin-top: 0;
+      }
 
       @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
         position: absolute;
         left: 0;
         bottom: 100%;
         width: 100%;
+        text-align: center;
+        height: 52px;
+        line-height: 52px;
+        font-size: 20px;
       }
 
       @include make-md-column(4);
