@@ -2,9 +2,13 @@
   "name": "os-styles",
   "version": "0.0.1",
   "description": "Stylesheets for OpenSpending",
+  "main": "src/index.js",
   "scripts": {
-    "test": "stylelint 'src/**/*.scss'",
-    "test:fix": "stylelint 'src/**/*.scss' --fix",
+    "test": "mocha tests/**/*",
+    "posttest": "npm run lint",
+    "lint": "npm run lint:js && npm run lint:styles",
+    "lint:js": "eslint src tests",
+    "lint:styles": "stylelint 'src/**/*.scss'",
     "build": "node-sass --source-map true src/ -o lib/ && cp -r src/assets lib",
     "prepublish": "npm run build"
   },
@@ -26,9 +30,14 @@
     "url": "https://github.com/openspending/openspending/issues"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "lodash.merge": "^4.6.0"
   },
   "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-config-google": "^0.8.0",
+    "lodash.clonedeep": "^4.5.0",
+    "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
     "stylelint": "^7.11.1",
     "stylelint-config-standard": "^16.0.0"
