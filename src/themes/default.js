@@ -16,7 +16,7 @@ module.exports = {
     },
     links: [
       {
-        title: 'Privacy my ass',
+        title: 'Privacy',
         href: 'https://okfn.org/privacy-policy/',
       },
       {
