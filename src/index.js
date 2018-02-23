@@ -1,7 +1,7 @@
 'use strict';
 
-const merge = require('lodash.merge');
-const themes = {
+var merge = require('lodash.merge');
+var themes = {
   default: require('./themes/default'),
 };
 
@@ -37,8 +37,8 @@ function OSStyles(customThemes) {
      * @return {object} The theme
      */
     getTheme: function getTheme(themeName) {
-      const themes = this._themes;
-      const customThemes = this._customThemes;
+      var themes = this._themes;
+      var customThemes = this._customThemes;
 
       if (themeName !== undefined
           && !themes.hasOwnProperty(themeName)
